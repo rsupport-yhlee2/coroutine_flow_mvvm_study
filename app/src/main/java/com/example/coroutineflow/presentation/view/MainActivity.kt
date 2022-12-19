@@ -1,12 +1,8 @@
-package com.example.coroutineflow
+package com.example.coroutineflow.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.Flow
-import kotlin.coroutines.CoroutineContext
+import com.example.coroutineflow.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
