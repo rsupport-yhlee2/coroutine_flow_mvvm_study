@@ -25,12 +25,8 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<UiState> = _uiState
     fun fetchData() = viewModelScope.launch {
         repository.getAllArticles()
-            .stateIn(
-                scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(5000L),
-                initialValue = UiState.Uninitialized
-            ).collect {
-                _uiState.value = UiState.Success(it as List<Article>)
+            .collect {
+                _uiState.value = UiState.Success(it)
             }
     }
 }
