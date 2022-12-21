@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setObserver() {
+        Log.e("MainActivity","observer set")
         lifecycleScope.launch{
             viewModel.uiState.collect{ state ->
                 Log.e("MainActivity","${state}")
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             is UiState.Uninitialized -> {viewModel.fetchData()}
             is UiState.Loading -> {}
             is UiState.Success -> handleSuccess(state)
-            is UiState.Error<*> -> {}
+            is UiState.Error -> {}
             else -> {}
         }
     }

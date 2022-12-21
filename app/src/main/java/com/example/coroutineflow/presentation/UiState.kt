@@ -9,5 +9,5 @@ sealed class UiState{
 
     data class Success(val data : List<Article>) : UiState()
 
-    data class Error<T>(val error: Throwable) : UiState()
+    data class Error(val error: Throwable) : UiState()
 }
